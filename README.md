@@ -3,7 +3,7 @@ I wanted to make my own coroutine library (for amd64 Linux), so I did.
 
 Yeah, it isn't the best but it was fun to make.
 
-Also, my usage of `await` does not seem consistent with how it is usually used, probably because I don't really understand coroutines 🤷‍
+Also, my usage of `await` does not seem consistent with how it is usually used, probably because I don't really understand coroutines 🤷‍. These "coroutines" are more like Python's iterators.
 
 ### Usage:
 
