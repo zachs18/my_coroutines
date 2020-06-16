@@ -5,6 +5,8 @@ Yeah, it isn't the best but it was fun to make.
 
 Also, my usage of `await` does not seem consistent with how it is usually used, probably because I don't really understand coroutines 🤷‍. These "coroutines" are more like Python's iterators.
 
+Note that this library only supports using coroutines in a single thread at a time, since IDK how to do thread_local in assembly.
+
 ### Usage:
 
 `co_handle_t co_allocate(intptr_t (*func)(intptr_t));`: allocates the necessary resources for a coroutine that will run `func` and returns an opaque pointer handle type usable to await, query finished-ness, and free resources after completion. If the returned `co_handle_t` compares equal to `0`/`NULL`/`nullptr` , then the argument was invalid or the resource allocation failed.
