@@ -3,7 +3,7 @@ I wanted to make my own coroutine library (for amd64 Linux), so I did.
 
 Yeah, it isn't the best but it was fun to make.
 
-Also, my usage of `await` does not seem consistent with how it is usually used, probably because I don't really understand coroutines 🤷‍. These "coroutines" are more like Python's iterators.
+These coroutines are very similar to like Python's generators.
 
 Note that this library only supports using coroutines in a single thread at a time, since IDK how to do thread_local in assembly.
 
