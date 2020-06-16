@@ -14,7 +14,7 @@ The function passed to `co_allocate` will not start executing until the coroutin
 
 `intptr_t co_await(co_handle_t handle, intptr_t arg)`: If the coroutine has not started execution, it will start execution with `arg` as its argument. If it has started execution (and has yielded) then `co_yield` will return `arg` and execution will continue from where the function yielded. `co_await` will return either when the coroutine returns (in which case the return value is the return value of the function) or calls `co_yield` (in which case the return value is the arg passed to `co_yield`). This function does not (currently) deal with invalid arguments.
 
-`intptr_t co_yield(intptr_t arg)`: This function should only be called in functions that will be used as coroutines. Calling this function outside of a coroutine is **bad^(TM)**. The caller's `co_await` will return `arg` from where it left off. This coroutine will continue from where it left off when it is next `co_await`ed. This function does not (currently) deal with invalid arguments or call conditions.
+`intptr_t co_yield(intptr_t arg)`: This function should only be called in functions that will be used as coroutines. Calling this function outside of a coroutine is **bad<sup>(TM)</sup>**. The caller's `co_await` will return `arg` from where it left off. This coroutine will continue from where it left off when it is next `co_await`ed. This function does not (currently) deal with invalid arguments or call conditions.
 
 `bool co_finished(co_handle_t handle)`: This function can be used to see if a coroutine has completed (returns `true`) or if it is still waiting to be `co_await`ed (returns `false`)
 
