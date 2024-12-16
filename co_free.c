@@ -10,7 +10,7 @@ int co_free(co_handle_t handle) {
 		// the coroutine is not finished
 		return -1;
 	} else {
-		// the coroutine is finished, deallocate it and it's stack
+		// the coroutine is finished, deallocate it and its stack
 		char *sp = execution_state_info_ptr[1];
 		sp -= (2 << 20) - 0x10;
 		free(sp);
