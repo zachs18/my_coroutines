@@ -7,7 +7,7 @@ co_allocate(
 
 	.globl	co_allocate
 	.type	co_allocate, @function
-co_allocate: # This could probably be written in 
+co_allocate: # This could probably be written in C
 	push	%rbp        # Save old frame pointer
 	mov	%rsp,%rbp   # point frame pointer to top of stack
 	sub	$0x20,%rsp

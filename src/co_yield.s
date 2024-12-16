@@ -8,6 +8,7 @@ co_yield(
 # idea:
 #  we can assume that any things that are necessary to enter a function are already true, since we just entered co_yield
 #  e.g. we don't have to deal with "The CPU shall be in x87 mode upon entry to a function." (x86-64-psABI-1.0.pdf section 3.2.1) and the like
+#       we also don't have to handle the calling function's red-zone
 #
 # on call:
 # set up stack frame
