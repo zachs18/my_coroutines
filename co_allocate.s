@@ -78,7 +78,7 @@ not a C function, only used in asm as the entry/exit point for coroutines
 
 # idea:
 # this function is given as the ip of newly allocated coroutines
-# when a coroutine is allocated, it's stack contains (at least) 16 bytes
+# when a coroutine is allocated, its stack contains (at least) 16 bytes
 # a pointer to the function to be called located at the top (%rsp)
 #
 # When a newly allocated coroutine is co_awaited, this function will start
@@ -93,7 +93,7 @@ co_wrapper: # called (indirectly) on first co_await; same state as .co_yield_res
 	mov	%rax,%rdi    # co_await expects the value in %rdi
 
 	# this part is similar to the beginning of co_yield
-	# to pop our execution state and set it's ip to NULL to indicate we are finished
+	# to pop our execution state and set its ip to NULL to indicate we are finished
 
 	mov	current_execution_state_info(%rip),%rbx # current execution info pointer into %rbx
 
